@@ -1,0 +1,29 @@
+﻿<div id="eventModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4>Select Date to Add an Event</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:-30px; border: solid 2px black; width:20px">&times;</button>
+        </div>
+
+        <div class="modal-body">
+            <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options" style="margin-left:110px; width:340px"></div>
+            <!--<datepicker min="minDate" show-weeks="false" style="margin-left:150px"></datepicker>-->
+
+            <div>
+                <span style="font-weight:bold">Location : <input type="text" style="width: 460px; margin-left: 2px" ng-model="newEvent.Location" /></span>
+                <br />
+                <span style="font-weight:bold">1rst Shift : <input type="text" style="width: 460px; margin-top:10px" ng-model="newEvent.FirstShift" /></span>
+                <br />
+                <span style="font-weight:bold">2nd Shift : <input type="text" style="width: 460px; margin-top:10px" ng-model="newEvent.SecondShift" /></span>
+            </div>
+        </div>
+     
+        <div class="modal-footer">
+           <button class="btn cancel" ng-click="cancel()">Cancel</button>
+           <button class="btn" ng-click="submitAddEvent()">Save</button>
+       </div>
+
+    </div>
+  </div>
+</div>

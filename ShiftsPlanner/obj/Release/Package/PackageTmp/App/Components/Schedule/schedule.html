@@ -1,0 +1,96 @@
+﻿
+<div ng-controller="scheduleCtrl">
+
+    <div class="calendar-base" >
+
+        <div class="year">2018</div>
+        <!-- year -->
+
+        <div class="triangle-left"></div>
+        <!--triangle -->
+        <div class="triangle-right"></div>
+        <!--  triangle -->
+
+        <div class="months" style="margin-left:20px">
+            <span class="month-hover" ng-class="{'active': isActive('01')}" ng-click="getDays('01')">Jan</span>
+            <span class="month-hover" ng-class="{'active': isActive('02')}" ng-click="getDays('02')">Feb</span>
+            <span class="month-hover" ng-class="{'active': isActive('03')}" ng-click="getDays('03')">Mar</span>
+            <span class="month-hover" ng-class="{'active': isActive('04')}" ng-click="getDays('04')">Apr</span>
+            <span class="month-hover" ng-class="{'active': isActive('05')}" ng-click="getDays('05')">May</span>
+            <span class="month-hover" ng-class="{'active': isActive('06')}" ng-click="getDays('06')">Jun</span>
+            <span class="month-hover" ng-class="{'active': isActive('07')}" ng-click="getDays('07')">July</span>
+            <span class="month-hover" ng-class="{'active': isActive('08')}" ng-click="getDays('08')">Aug</span>
+            <span class="month-hover" ng-class="{'active': isActive('09')}" ng-click="getDays('09')">Sep</span>
+            <span class="month-hover" ng-class="{'active': isActive('10')}" ng-click="getDays('10')">Oct</span>
+            <span class="month-hover" ng-class="{'active': isActive('11')}" ng-click="getDays('11')">Nov</span>
+            <span class="month-hover" ng-class="{'active': isActive('12')}" ng-click="getDays('12')">Dec</span>
+        </div> months
+
+        <table class="table table-striped" style="margin-top:100px; margin-left:370px; width:60%">
+            <thead>
+                <tr>
+                    <th scope="col">SUN</th>
+                    <th scope="col">MON</th>
+                    <th scope="col">TUE</th>
+                    <th scope="col">WED</th>
+                    <th scope="col">THU</th>
+                    <th scope="col">FRI</th>
+                    <th scope="col">SAT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="week in days track by $index">
+                    <td ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 0"><span ng-hide="day.day==0">{{day.day}}</span></td>
+                    <td ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week"ng-if="day.week == 1">{{day.day}}</td>
+                    <td ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week"ng-if="day.week == 2">{{day.day}}</td>
+                    <td ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week"ng-if="day.week == 3">{{day.day}}</td>
+                    <td ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week"ng-if="day.week == 4">{{day.day}}</td>
+                    <td ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week"ng-if="day.week == 5">{{day.day}}</td>
+                    <td ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week"ng-if="day.week == 6">{{day.day}}</td>
+
+
+                </tr>
+    </tbody>
+    </table>
+   
+</div>
+        <!-- num-dates -->
+        <div class="event-indicator"></div>
+        <!-- event-indicator -->
+        <div class="active-day"></div>
+        <!-- active-day -->
+        <div class="event-indicator two"></div>
+        <!-- event-indicator -->
+
+    </div>
+    <!-- calendar-base -->
+    <div class="calendar-left" style="width:500px; margin-left:-180px">
+
+        <div class="num-date">{{ today | date : "d" }}</div>
+        <!--num-date -->
+        <div class="day">{{ today | date : "EEEE" }}</div>
+        <!--day -->
+        <div class="current-events" style="margin-top:20px">
+            Current Events
+            <br />
+            <ul>
+                <li>27-04-18 Chiswick 10:00 - 12:00</li>
+            </ul>
+            <span class="posts">Current Booking</span>
+            <br />
+            <ul>
+                <li>10:00 - 12:00 / Priscille - Cassandra</li>
+            </ul>
+        </div>
+        <!--current-events -->
+
+        <div class="create-event" ng-click="addEvent()">Create an Event <i class="fa fa-plus-circle" style="padding:20px"></i></div>
+        <!-- create-event -->
+        
+      
+        <!-- add-event -->
+
+    </div>
+    <!-- calendar-left -->
+
+<!-- container -->
