@@ -9,7 +9,7 @@ namespace ShiftsPlanner.Models
     public class UserRole
     {
         [Key]
-        public int UserID { get; set; }
-        public int RoleID { get; set; }
+        public Guid UserRoleID { get; set; }
+        public string UserRoleName { get; set; }
     }
 }

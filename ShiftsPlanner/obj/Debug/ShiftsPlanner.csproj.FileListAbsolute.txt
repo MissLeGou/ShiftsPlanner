@@ -1,3 +1,4 @@
+C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\obj\Debug\ShiftsPlanner.csproj.CoreCompileInputs.cache
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\bin\ApplicationInsights.config
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\bin\ShiftsPlanner.dll.config
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\bin\ShiftsPlanner.dll
@@ -46,7 +47,5 @@ C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\bin\Microsoft
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\bin\Microsoft.AI.Web.xml
-C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\obj\Debug\ShiftsPlanner.csprojResolveAssemblyReference.cache
-C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\obj\Debug\ShiftsPlanner.csproj.CoreCompileInputs.cache
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\obj\Debug\ShiftsPlanner.dll
 C:\Users\PriscilleFerrara\source\repos\ShiftsPlanner\ShiftsPlanner\obj\Debug\ShiftsPlanner.pdb

@@ -160,18 +160,24 @@
     <Compile Include="App_Start\Startup.db.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Calendar\CalendarController.cs" />
+    <Compile Include="Controllers\Events\AddEventsController.cs" />
+    <Compile Include="Controllers\Events\MyShiftsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Shifts\AddShiftsController.cs" />
+    <Compile Include="Controllers\Shifts\BookShiftsController.cs" />
     <Compile Include="DataAccessLayer\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs" />
     <Compile Include="DataAccessLayer\ShiftsPlannerContext.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Shift.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Models\ViewModels\BookingDTO.cs" />
+    <Compile Include="Models\ViewModels\EventDTO.cs" />
+    <Compile Include="Models\ViewModels\MyShiftDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

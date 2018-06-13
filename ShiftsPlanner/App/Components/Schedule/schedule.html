@@ -1,6 +1,6 @@
 ﻿
 <!--<div ng-show="selectedTab == false">-->
-    <div style="margin-top:-250px">
+    <div style="margin-top:-250px" data-ng-init="getDays()">
 
         <div class="calendar-base">
 
@@ -13,18 +13,18 @@
             <!--  triangle -->
 
             <div class="months" style="margin-left:20px">
-                <span class="month-hover" ng-class="{'active': isActive('01')}" ng-click="getDays('01')">Jan</span>
-                <span class="month-hover" ng-class="{'active': isActive('02')}" ng-click="getDays('02')">Feb</span>
-                <span class="month-hover" ng-class="{'active': isActive('03')}" ng-click="getDays('03')">Mar</span>
-                <span class="month-hover" ng-class="{'active': isActive('04')}" ng-click="getDays('04')">Apr</span>
-                <span class="month-hover" ng-class="{'active': isActive('05')}" ng-click="getDays('05')">May</span>
-                <span class="month-hover" ng-class="{'active': isActive('06')}" ng-click="getDays('06')">Jun</span>
-                <span class="month-hover" ng-class="{'active': isActive('07')}" ng-click="getDays('07')">July</span>
-                <span class="month-hover" ng-class="{'active': isActive('08')}" ng-click="getDays('08')">Aug</span>
-                <span class="month-hover" ng-class="{'active': isActive('09')}" ng-click="getDays('09')">Sep</span>
-                <span class="month-hover" ng-class="{'active': isActive('10')}" ng-click="getDays('10')">Oct</span>
-                <span class="month-hover" ng-class="{'active': isActive('11')}" ng-click="getDays('11')">Nov</span>
-                <span class="month-hover" ng-class="{'active': isActive('12')}" ng-click="getDays('12')">Dec</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('01')}" ng-click="getDays('01')">Jan</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('02')}" ng-click="getDays('02')">Feb</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('03')}" ng-click="getDays('03')">Mar</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('04')}" ng-click="getDays('04')">Apr</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('05')}" ng-click="getDays('05')">May</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('06')}" ng-click="getDays('06')">Jun</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('07')}" ng-click="getDays('07')">July</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('08')}" ng-click="getDays('08')">Aug</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('09')}" ng-click="getDays('09')">Sep</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('10')}" ng-click="getDays('10')">Oct</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('11')}" ng-click="getDays('11')">Nov</span>
+                <span id="activeMonth" class="month-hover" ng-class="{'active': isActive('12')}" ng-click="getDays('12')">Dec</span>
             </div> 
 
             <table class="table table-striped" style="margin-top:200px; margin-left:40px; width:90%">
@@ -41,13 +41,13 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="week in days track by $index">
-                        <td style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 0"><span ng-hide="day.day==0">{{day.day}}</span></td>
-                        <td style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 1">{{day.day}}</td>
-                        <td style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 2">{{day.day}}</td>
-                        <td style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 3">{{day.day}}</td>
-                        <td style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 4">{{day.day}}</td>
-                        <td style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 5">{{day.day}}</td>
-                        <td style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday}" ng-repeat="day in week" ng-if="day.week == 6">{{day.day}}</td>
+                        <td ng-click="displayShifts(day.TimeStamp)" style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday, 'mark' : getAllEvents(day)}" ng-repeat="day in week" ng-if="day.week == 0"><span ng-hide="day.day==0">{{day.day}}</span></td>
+                        <td ng-click="displayShifts(day.TimeStamp)" style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday, 'mark' : getAllEvents(day)}" ng-repeat="day in week" ng-if="day.week == 1">{{day.day}}</td>
+                        <td ng-click="displayShifts(day.TimeStamp)" style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday, 'mark' : getAllEvents(day)}" ng-repeat="day in week" ng-if="day.week == 2">{{day.day}}</td>
+                        <td ng-click="displayShifts(day.TimeStamp)" style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday, 'mark' : getAllEvents(day)}" ng-repeat="day in week" ng-if="day.week == 3">{{day.day}}</td>
+                        <td ng-click="displayShifts(day.TimeStamp)" style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday, 'mark' : getAllEvents(day)}" ng-repeat="day in week" ng-if="day.week == 4">{{day.day}}</td>
+                        <td ng-click="displayShifts(day.TimeStamp)" style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday, 'mark' : getAllEvents(day)}" ng-repeat="day in week" ng-if="day.week == 5">{{day.day}}</td>
+                        <td ng-click="displayShifts(day.TimeStamp)" style="font-size:20px" ng-class="{'highlight': day.TimeStamp == highlightToday, 'mark' : getAllEvents(day)}" ng-repeat="day in week" ng-if="day.week == 6">{{day.day}}</td>
 
 
                     </tr>
@@ -55,14 +55,7 @@
             </table>
 
         </div>
-        <!-- num-dates -->
-        <div class="event-indicator"></div>
-        <!-- event-indicator -->
-        <div class="active-day"></div>
-        <!-- active-day -->
-        <div class="event-indicator two"></div>
-        <!-- event-indicator -->
-
+        
     </div>
 
     <!-- calendar-base -->
@@ -70,26 +63,43 @@
 
         <div class="num-date">{{ today | date : "d" }}</div>
         <!--num-date -->
-        <div class="day">{{ today | date : "EEEE" }}</div>
+        <div class="day" style="font-family: 'Kalam', cursive; font-weight: bold">{{ today | date : "EEEE" }}</div>
         <!--day -->
-        <div class="current-events" style="margin-top:20px">
-            Current Events
-            <br />
-            <ul>
-                <li>27-04-18 Chiswick 10:00 - 12:00</li>
-            </ul>
-            <span class="posts">Current Booking</span>
-            <br />
-            <ul>
-                <li>10:00 - 12:00 / Priscille - Cassandra</li>
-            </ul>
+        <div class="current-events" style="margin-top:20px; border: solid white 2px; margin-left:5px; margin-right:15px">
+
+            <div id="current-event">
+                <p style="font-weight:bold; margin-left: 10px; margin-top: 10px">Date : {{shiftOnDay.ShiftDate}} </p>
+                <p style="font-weight:bold; margin-left: 10px">Location : {{shiftOnDay.Location}} </p>
+            </div>
+            <div style="margin-top: 30px">
+                <ul>
+                    <li>
+                        1rst Shift : {{shiftOnDay.FirstShift}} <br />
+                        <span style="font-weight:bold">Enter Your Name : <input type="text" style="width: 260px; margin-left: 2px; color: black" /></span>
+                    </li>
+                    <li>
+                        2nd Shift : {{shiftOnDay.SecondShift}} <br />
+                        <span style="font-weight:bold">Enter Your Name : <input type="text" style="width: 260px; margin-left: 2px; color: black" /></span>
+                    </li>
+                    <li>
+                        3rd Shift : {{shiftOnDay.ThirdShift}} <br />
+                        <span style="font-weight:bold">Enter Your Name : <input type="text" style="width: 260px; margin-left: 2px; color: black" /></span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="footer" style="margin-top: 40px; margin-bottom: 20px; margin-left: 300px">
+                <button class="btn cancel" style="color: black" ng-click="cancelShift()">Cancel</button>
+                <button class="btn" style="color: black" ng-click="bookShifts()">Save</button>
+            </div>
         </div>
-        <!--current-events -->
-        <div class="create-event" data-toggle="modal" data-target="#eventModal">Create an Event <i class="fa fa-plus-circle" style="padding:20px"></i></div>
-    </div>
+            <!--current-events -->
+            <div class="create-event" data-toggle="modal" data-target="#eventModal">Create an Event <i class="fa fa-plus-circle" style="padding:20px"></i></div>
+        </div>
 <!--</div>-->
 
 <!--Modal-->
 <add-event-modal></add-event-modal>
+
 
 

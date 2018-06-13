@@ -17,8 +17,10 @@ namespace ShiftsPlanner.Models.DataAccessLayer
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Shift> Shifts { get; set; }
-        public virtual DbSet<Role> UserRoles { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
     }
 }

@@ -9,11 +9,8 @@ namespace ShiftsPlanner.Models
     public class User
     {
         [Key]
-        public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAdd { get; set; }
-        public List<Role> UserRoles { get; set; }
-        public List<Booking> Bookings { get; set; }
+        public Guid UserID { get; set; }
+        public string UserName { get; set; }
+        
     }
 }

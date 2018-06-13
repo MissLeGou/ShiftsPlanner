@@ -1,7 +1,7 @@
 ﻿'use strict';
-var app = angular.module('SchedulePlannerApp', ['ngRoute', 'satellizer']);
+var app = angular.module('SchedulePlannerApp', ['ngRoute', 'satellizer', 'toastr', 'ui.bootstrap']);
 
-app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {
+app.config(['$routeProvider', '$locationProvider', '$authProvider', 'toastrConfig', function ($routeProvider, $locationProvider, $authProvider, toastrConfig) {
 
     $routeProvider.when('/schedule/',
         {
@@ -29,6 +29,16 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
         });
 
     $locationProvider.hashPrefix('');
+
+    angular.extend(toastrConfig,
+        {
+            positionClass: 'toast-top-right',
+            newestOnTop: true,
+            progressBar: true,
+            allowHtml: true,
+            closeButton: true,
+            closeHtml: '<button><i class="fa fa-window-close" aria-hidden="true"></i></button>' 
+        });
 
     $routeProvider.otherwise({ redirectTo: '/myShifts/' });
     $authProvider.google({
